@@ -1,0 +1,28 @@
+{
+  "name": "neet",
+  "version": "0.1.0",
+  "description": "NodeJS Enhanced Edition Tools for Infinity Engine games",
+  "main": "index.js",
+  "scripts": {
+    "test": "-"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YTheon/NEET.git"
+  },
+  "keywords": [
+    "Baldur",
+    "EE",
+    "mods"
+  ],
+  "author": "YTheon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YTheon/NEET/issues"
+  },
+  "homepage": "https://github.com/YTheon/NEET#readme",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.11.1"
+  }
+}
