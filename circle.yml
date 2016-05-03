@@ -1,0 +1,44 @@
+machine:
+
+  timezone:
+    Europe/Budapest # Set the timezone
+
+  node:
+    version:
+      5.7.0 #6.0.0
+
+  environment:
+    CIRCLE_ENV: test
+    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
+
+#database:
+#  override:
+#    - cp config/database.yml.ci config/database.yml
+#    - bundle exec rake db:create db:schema:load
+
+## Customize test commands
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/linter
+    - mkdir -p $CIRCLE_TEST_REPORTS/mocha
+  override:
+    - npm run-script lint -- --output-file=$CIRCLE_TEST_REPORTS/linter/eslint_`date "+%y%m%d%H%M%S"`.xml
+    - npm test
+  post:
+    - bundle exec rake jasmine:ci: # add an extra test type
+        environment:
+          RAILS_ENV: test
+          RACK_ENV: test
+
+## Customize deployment commands
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: foo-bar-123
+
+## Custom notifications
+notify:
+  webhooks:
+    # A list of hashes representing hooks. Only the url field is supported.
+    - url: https://someurl.com/hooks/circle

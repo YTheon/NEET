@@ -3,3 +3,16 @@ node_modules/
 
 # Log files
 *.log
+
+# text misc files
+*.sublime-workspace
+*.sublime-project
+
+# Binary misc files
+*.pdf
+
+# Test data
+tests/data/
+
+# External program sources
+src/
