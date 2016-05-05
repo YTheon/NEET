@@ -1,9 +1,12 @@
-'use strict';
+"use strict";
 
 /**
- * @return {[type]}
+ * @return {boolean} The default return for success.
  */
-function test() {
-    console.log('HI');
-    return;
+function teszt() {
+  console.log("HI");
+
+  return true;
 }
+
+teszt();
