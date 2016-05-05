@@ -3,10 +3,10 @@
 /**
  * @return {boolean} The default return for success.
  */
-function teszt() {
+module.exports.teszt = function teszt() {
   console.log("HI");
 
   return true;
-}
+};
 
-teszt();
+module.exports.teszt();

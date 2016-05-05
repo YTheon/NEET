@@ -6,7 +6,7 @@
   "scripts": {
     "lintfix": "eslint -f junit --ext .js,.json --fix .",
     "lint": "eslint -f junit --ext .js,.json .",
-    "mocha": "mocha ./tests/ --reporter mochawesome --reporter-options reportDir=./coverage/mochawesome_`date '+%y%m%d%H%M%S'`/",
+    "mocha": "mocha ./tests/ --reporter mochawesome --reporter-options reportDir=./coverage/mochawesome/",
     "test": "istanbul cover ./node_modules/.bin/_mocha ./tests/ -- --reporter mocha-junit-reporter"
   },
   "repository": {

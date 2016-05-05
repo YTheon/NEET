@@ -11,8 +11,9 @@ node_modules/
 # Binary misc files
 *.pdf
 
-# Test data
+# Test data and results
 tests/data/
+coverage/
 
 # External program sources
 src/
