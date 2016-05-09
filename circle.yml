@@ -8,7 +8,7 @@ machine:
       5.7.0 #6.0.0
 
   environment:
-    MOCHA_FILE: $CIRCLE_TEST_REPORTS/coverage/istanbulmocha_`date "+%y%m%d%H%M%S"`.xml
+    MOCHA_FILE: $CIRCLE_TEST_REPORTS/mocha/istanbulmocha_`date "+%y%m%d%H%M%S"`.xml
 
 #database:
 #  override:
@@ -19,7 +19,7 @@ machine:
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/linter
-    - mkdir -p $CIRCLE_TEST_REPORTS/coverage
+    - mkdir -p $CIRCLE_TEST_REPORTS/mocha
   override:
     - npm run-script lint -- --output-file=$CIRCLE_TEST_REPORTS/linter/eslint_`date "+%y%m%d%H%M%S"`.xml
     - npm test
